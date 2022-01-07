@@ -13,11 +13,11 @@ public class apitrello {
 		RestAssured.baseURI=baseurl;
 		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e90fa4fecf3fbe76b05f98865c6411a")
 		.header("content-Type","application/json")
-		.when().post("1/boards/?name=alpeshtrello")
+		.when().post("1/boards/?name=trelloapi")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 	}
 	
-	/* perform three operation
+	//perform three operation
 	
 	@Test (enabled = false)
 	
@@ -58,7 +58,7 @@ public class apitrello {
 		.when().delete("1/boards/xTuDFW9S")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 		
-	}*/
+	}
 	
 	
 	
