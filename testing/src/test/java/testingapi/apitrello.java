@@ -8,10 +8,10 @@ import static io.restassured.RestAssured.given;
 public class apitrello {
 	public static String baseurl = "https://trello.com/";
 	// create a board
-	@Test (priority = 0)
+	@Test (enabled = false)
 	public void createABoard() {
 		RestAssured.baseURI=baseurl;
-		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e90fa4fecf3fbe76b05f98865c6411a")
+		given().queryParam("key","4d74bc137adbcd3bf10604fec816955e").queryParam("token", "9e2cd5b25f15e7ed6f63ee925f828331a89ab9fcb18ab38933ee61a82fc81a60")
 		.header("content-Type","application/json")
 		.when().post("1/boards/?name=trelloapi")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
@@ -19,33 +19,33 @@ public class apitrello {
 	
 	//perform three operation
 	
-	@Test (enabled = false)
+	@Test (enabled = true)
 	
 	public void createAListOnBoard() {
 		//https://api.trello.com/1/boards/{id}/lists?name={name}
 		RestAssured.baseURI=baseurl;
-		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e90fa4fecf3fbe76b05f98865c6411a")
-		.queryParam("id", "xTuDFW9S").queryParam("name", "apitestng").header("content-Type","application/json")
-		.when().post("1/boards/xTuDFW9S/lists?name=apitesting/")
+		given().queryParam("key","4d74bc137adbcd3bf10604fec816955e").queryParam("token", "9e2cd5b25f15e7ed6f63ee925f828331a89ab9fcb18ab38933ee61a82fc81a60")
+		.queryParam("id", "q5IDd96z").queryParam("name", "apitestng").header("content-Type","application/json")
+		.when().post("1/boards/q5IDd96z/lists?name=apitesting/")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 	}
 	
-	@Test (enabled = false)
+	@Test (enabled = true)
 	public void creatALabel(){
 		RestAssured.baseURI=baseurl;
-		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e90fa4fecf3fbe76b05f98865c6411a")
+		given().queryParam("key","4d74bc137adbcd3bf10604fec816955e").queryParam("token", "9e2cd5b25f15e7ed6f63ee925f828331a89ab9fcb18ab38933ee61a82fc81a60")
 		.header("content-Type","application/json")
-		.when().post("1/boards/xTuDFW9S/labels?name=apialpeshtest&color=blue")
+		.when().post("1/boards/q5IDd96z/labels?name=apialpeshtest&color=blue")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 	}
 	
-	@Test (enabled = false)
+	@Test (enabled = true)
 	public void emailkeycreate() {
 		
 		RestAssured.baseURI=baseurl;
-		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e900a4fecf3fbe76b05f98865c6411a")
+		given().queryParam("key","4d74bc137adbcd3bf10604fec816955e").queryParam("token", "9e2cd5b25f15e7ed6f63ee925f828331a89ab9fcb18ab38933ee61a82fc81a60")
 		.header("content-Type","application/json")
-		.when().post("1/boards/xTuDFW9S/emailKey/generate")
+		.when().post("1/boards/q5IDd96z/emailKey/generate")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 		}
 	// delete a board
@@ -53,9 +53,9 @@ public class apitrello {
 	public void DeleteAboard() {
 		
 		RestAssured.baseURI=baseurl;
-		given().queryParam("key","1a37f3219aa780e7331acd0428c452df").queryParam("token", "353977b00961699d912374f18fe8ac717e90fa4fecf3fbe76b05f98865c6411a")
+		given().queryParam("key","4d74bc137adbcd3bf10604fec816955e").queryParam("token", "9e2cd5b25f15e7ed6f63ee925f828331a89ab9fcb18ab38933ee61a82fc81a60")
 		.header("content-Type","application/json")
-		.when().delete("1/boards/xTuDFW9S")
+		.when().delete("1/boards/q5IDd96z")
 		.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 		
 	}
